@@ -14,7 +14,6 @@
 		BB8E33D726F7721D00011E06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8E33D526F7721D00011E06 /* LaunchScreen.storyboard */; };
 		BB8E33E126F7762400011E06 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E33E026F7762400011E06 /* UIView + Extensions.swift */; };
 		BB8E33EB26F7B97200011E06 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E33EA26F7B97200011E06 /* ShareViewController.swift */; };
-		BB8E33EE26F7B97200011E06 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8E33EC26F7B97200011E06 /* MainInterface.storyboard */; };
 		BB8E33F226F7B97200011E06 /* ShareExample.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BB8E33E826F7B97200011E06 /* ShareExample.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -53,7 +52,6 @@
 		BB8E33E026F7762400011E06 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
 		BB8E33E826F7B97200011E06 /* ShareExample.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExample.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8E33EA26F7B97200011E06 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		BB8E33ED26F7B97200011E06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		BB8E33EF26F7B97200011E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				BB8E33EA26F7B97200011E06 /* ShareViewController.swift */,
-				BB8E33EC26F7B97200011E06 /* MainInterface.storyboard */,
 				BB8E33EF26F7B97200011E06 /* Info.plist */,
 			);
 			path = ShareExample;
@@ -214,7 +211,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB8E33EE26F7B97200011E06 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,14 +253,6 @@
 				BB8E33D626F7721D00011E06 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		BB8E33EC26F7B97200011E06 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BB8E33ED26F7B97200011E06 /* Base */,
-			);
-			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
