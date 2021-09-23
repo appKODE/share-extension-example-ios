@@ -22,6 +22,8 @@
 	<string>1</string>
 	<key>NSExtension</key>
 	<dict>
+		<key>NSExtensionPrincipalClass</key>
+		<string>ShareViewController</string>
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>NSExtensionActivationRule</key>
@@ -32,8 +34,6 @@
 				<string>10</string>
 			</dict>
 		</dict>
-		<key>NSExtensionMainStoryboard</key>
-		<string>MainInterface</string>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.share-services</string>
 	</dict>
