@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class ViewController: UIViewController {
 
@@ -22,6 +23,29 @@ class ViewController: UIViewController {
         configureBackgroundImage()
         configureMainStack()
         configureTitleLabel()
+    }
+
+    func getFilesExtensionContext() {
+        guard let inputItems = extensionContext?.inputItems as? [NSExtensionItem],
+              inputItems.count > 0
+        else {
+            extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
+            return
+        }
+
+        inputItems.forEach { item in
+            if let attachments = item.attachments,
+               !attachments.isEmpty {
+                attachments.forEach { attachment in
+
+                    if attachment.isImage {
+                        handleImageAttachment(attachment)
+                    } else if attachment.isMovie {
+                        handleMovieAttachment(attachment)
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -48,3 +72,13 @@ private extension ViewController {
     }
 }
 
+// MARK: - Attachment Types
+extension NSItemProvider {
+    var isImage: Bool {
+        return hasItemConformingToTypeIdentifier(kUTTypeImage as String)
+    }
+
+    var isMovie: Bool {
+        return hasItemConformingToTypeIdentifier(kUTTypeMovie as String)
+    }
+}

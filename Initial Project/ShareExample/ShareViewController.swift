@@ -7,12 +7,21 @@
 
 import UIKit
 
+struct PreviewModel {
+    let image: UIImage
+    let title: String
+}
+
 @objc(ShareViewController)
 class ShareViewController: UIViewController {
 
+    // Layout
     private let titleLabel = UILabel()
     private let previewsTable = UITableView()
     private let confirmButton = UIButton()
+
+    // Properties
+    private var previews: [PreviewModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +30,29 @@ class ShareViewController: UIViewController {
         configureTable()
         configureConfirmButton()
         setupLayout()
+    }
+
+    func getFilesExtensionContext() {
+        guard let inputItems = extensionContext?.inputItems as? [NSExtensionItem],
+              inputItems.isNotEmpty
+        else {
+            extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
+            return
+        }
+
+        inputItems.forEach { item in
+            if let attachments = item.attachments,
+               !attachments.isEmpty {
+                attachments.forEach { attachment in
+
+                    if attachment.isImage {
+                        handleImageAttachment(attachment)
+                    } else if attachment.isMovie {
+                        handleMovieAttachment(attachment)
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -33,7 +65,8 @@ private extension ShareViewController {
     }
 
     func configureTable() {
-
+        previewsTable.dataSource = self
+        previewsTable.register(UITableViewCell.self, forCellReuseIdentifier: "preview")
     }
 
     func configureConfirmButton() {
@@ -41,6 +74,7 @@ private extension ShareViewController {
         confirmButton.backgroundColor = .systemTeal
         confirmButton.layer.cornerRadius = 14
         confirmButton.setTitleColor(.white, for: .normal)
+        extensionContext
     }
 
     func setupLayout() {
@@ -71,3 +105,17 @@ private extension ShareViewController {
         ])
     }
 }
+
+// MARK: - UITableView Data Source
+extension ShareViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return previews.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "preview")!
+        cell.textLabel?.text = "Превью файла"
+        return cell
+    }
+}
+
