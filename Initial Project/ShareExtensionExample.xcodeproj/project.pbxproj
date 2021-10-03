@@ -15,6 +15,7 @@
 		BB8E33E126F7762400011E06 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E33E026F7762400011E06 /* UIView + Extensions.swift */; };
 		BB8E33EB26F7B97200011E06 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E33EA26F7B97200011E06 /* ShareViewController.swift */; };
 		BB8E33F226F7B97200011E06 /* ShareExample.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BB8E33E826F7B97200011E06 /* ShareExample.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BB8E348227099F7700011E06 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E348127099F7700011E06 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		BB8E33E826F7B97200011E06 /* ShareExample.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExample.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8E33EA26F7B97200011E06 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		BB8E33EF26F7B97200011E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB8E348127099F7700011E06 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,10 +118,19 @@
 		BB8E33E926F7B97200011E06 /* ShareExample */ = {
 			isa = PBXGroup;
 			children = (
+				BB8E348027099F6A00011E06 /* Subviews */,
 				BB8E33EA26F7B97200011E06 /* ShareViewController.swift */,
 				BB8E33EF26F7B97200011E06 /* Info.plist */,
 			);
 			path = ShareExample;
+			sourceTree = "<group>";
+		};
+		BB8E348027099F6A00011E06 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				BB8E348127099F7700011E06 /* TableViewCell.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB8E33EB26F7B97200011E06 /* ShareViewController.swift in Sources */,
+				BB8E348227099F7700011E06 /* TableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
