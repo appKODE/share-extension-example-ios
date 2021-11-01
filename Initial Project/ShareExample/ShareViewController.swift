@@ -12,7 +12,7 @@ import ImageIO
 
 public struct ShareFile {
     public struct Preview {
-        public var title: String
+        public let title: String
         public let size: String
         public let preview: UIImage?
     }
